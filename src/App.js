@@ -2,22 +2,28 @@ import React, { useState } from "react";
 import "./App.css";
 
 const categorias = {
-  Trailer: [
-    { id: 1, nome: "Pizza Calabresa", preco: 49.9 },
-    { id: 2, nome: "Pizza Marguerita", preco: 45.9 },
-  ],
-  Awards: [
-    { id: 3, nome: "Refrigerante 2L", preco: 10.0 },
-    { id: 4, nome: "Suco Natural", preco: 8.5 },
-  ],
-  Premiere: [],
-  Celebrity: [],
-  Cult: [],
-  Sundance: [],
-  "Cine Bijou": [],
-  Bomboniere: [],
-  Matinê: [],
-  Lanterninha: [],
+  Trailer: {
+    descricao: "Sabores clássicos com visual irresistível.",
+    itens: [
+      { id: 1, nome: "Pizza Calabresa", preco: 49.9, descricao: "Calabresa fatiada, cebola roxa e orégano." },
+      { id: 2, nome: "Pizza Marguerita", preco: 45.9, descricao: "Muçarela, tomate e manjericão fresco." },
+    ],
+  },
+  Awards: {
+    descricao: "Bebidas premiadas para acompanhar seu pedido.",
+    itens: [
+      { id: 3, nome: "Refrigerante 2L", preco: 10.0, descricao: "Coca-Cola, Guaraná ou Fanta." },
+      { id: 4, nome: "Suco Natural", preco: 8.5, descricao: "Sabores variados, 100% natural." },
+    ],
+  },
+  Premiere: { descricao: "Sabores de estreia especial.", itens: [] },
+  Celebrity: { descricao: "Preferidas dos famosos.", itens: [] },
+  Cult: { descricao: "Pizzas e acompanhamentos únicos.", itens: [] },
+  Sundance: { descricao: "Edições especiais e alternativas.", itens: [] },
+  CineBijou: { descricao: "Um toque retrô no cardápio.", itens: [] },
+  Bomboniere: { descricao: "Doces e guloseimas irresistíveis.", itens: [] },
+  Matinê: { descricao: "Menu infantil e divertido.", itens: [] },
+  Lanterninha: { descricao: "Clássicos que iluminam o paladar.", itens: [] },
 };
 
 export default function App() {
@@ -43,7 +49,6 @@ export default function App() {
     <div className="container">
       <h1 className="titulo">Suprema Pizza Cine</h1>
 
-      {/* Menu de abas para escolher categoria */}
       <div className="abas">
         {Object.keys(categorias).map((cat) => (
           <button
@@ -56,26 +61,26 @@ export default function App() {
         ))}
       </div>
 
-      {/* Itens da categoria ativa */}
+      <div className="descricao">
+        <p>{categorias[categoriaAtiva].descricao}</p>
+      </div>
+
       <div className="menu">
-        {categorias[categoriaAtiva].length === 0 ? (
-          <p className="vazio">Nenhum item nesta categoria.</p>
-        ) : (
-          categorias[categoriaAtiva].map((item) => (
-            <div key={item.id} className="item">
-              <div className="info">
-                <span>{item.nome}</span>
-                <span>R$ {item.preco.toFixed(2)}</span>
-              </div>
-              <button
-                className="botao adicionar"
-                onClick={() => adicionarItem(item)}
-              >
-                <strong>Adicionar</strong>
-              </button>
+        {categorias[categoriaAtiva].itens.map((item) => (
+          <div key={item.id} className="item">
+            <div className="info">
+              <strong>{item.nome}</strong>
+              <p className="item-descricao">{item.descricao}</p>
+              <span className="preco">R$ {item.preco.toFixed(2)}</span>
             </div>
-          ))
-        )}
+            <button
+              className="botao adicionar"
+              onClick={() => adicionarItem(item)}
+            >
+              <strong>Adicionar</strong>
+            </button>
+          </div>
+        ))}
       </div>
 
       <h2 className="subtitulo">Carrinho</h2>
