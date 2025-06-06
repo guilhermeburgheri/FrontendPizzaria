@@ -77,3 +77,31 @@ body {
   font-size: 18px;
   font-weight: bold;
 }
+
+.abas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+  justify-content: center;
+}
+
+.aba {
+  padding: 8px 16px;
+  border: 1px solid #007bff;
+  background-color: white;
+  color: #007bff;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.aba.ativa {
+  background-color: #007bff;
+  color: white;
+}
+
+.aba:hover:not(.ativa) {
+  background-color: #e0f0ff;
+}
