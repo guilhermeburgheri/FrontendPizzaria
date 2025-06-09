@@ -47,7 +47,9 @@ export default function App() {
 
   return (
     <div className="container">
-      <h1 className="titulo">Suprema Pizza Cine</h1>
+      <div className="logo">
+        <img src="/LogoSuprema.png" alt="Suprema Pizza Cine Logo" className="logo-imagem" />
+      </div>
 
       <div className="abas">
         {Object.keys(categorias).map((cat) => (
