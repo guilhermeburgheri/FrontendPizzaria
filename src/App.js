@@ -11,11 +11,36 @@ const categorias = {
         descricao: "Saborosos palitos de muçarela empanados.",
         precoG: 32.0
       },
-      { id: 2, nome: "Coppola", preco: 28, descricao: "Calabresa fatiada ao forno e limão em fatias." },
-      { id: 3, nome: "Insustentável Leveza do Ser", preco: 32, descricao: "Salada de rúcula, palmito, tomate cereja e azeitonas pretas." },
-      { id: 4, nome: "Perdido em Marte", preco: 27, descricao: "Batata rústica frita, crocante por fora e macia por dentro." },
-      { id: 5, nome: "Senhor dos Anéis", preco: 26, descricao: "Deliciosos anéis de cebola empanados e fritos." },
-      { id: 6, nome: "Stallone", preco: 26, descricao: "Casquinha de massa crocante, acompanha nosso molho de tomates." },
+      {
+        id: 2,
+        nome: "Coppola",
+        descricao: "Calabresa fatiada ao forno e limão em fatias.",
+        precoG: 28.0
+      },
+      {
+        id: 3,
+        nome: "Insustentável Leveza do Ser",
+        descricao: "Salada de rúcula, palmito, tomate cereja e azeitonas pretas.",
+        precoG: 32.0
+      },
+      {
+        id: 4,
+        nome: "Perdido em Marte",
+        descricao: "Batata rústica frita, crocante por fora e macia por dentro.",
+        precoG: 27.0
+      },
+      {
+        id: 5,
+        nome: "Senhor dos Anéis",
+        descricao: "Deliciosos anéis de cebola empanados e fritos.",
+        precoG: 26.0
+      },
+      {
+        id: 6,
+        nome: "Stallone",
+        descricao: "Casquinha de massa crocante, acompanha nosso molho de tomates.",
+        precoG: 26.0
+      }
     ],
   },
   Awards: {
@@ -97,136 +122,744 @@ const categorias = {
   },
   Premiere:
     { descricao: "Pizzas com o nome de filmes da atualidade que conquistaram as platéias do mundo todo.", itens: [
-      { id: 15, nome: "Pizza Casa de Papel", preco: 26, descricao: "Molho de tomates, cheddar, alho poró, peperoni, orégano e azeitonas pretas." },
-      { id: 16, nome: "Pizza Crepúsculo", preco: 26, descricao: "Molho de tomates, muçarela, orégano, manjericão fresco, alho frito e azeitonas pretas." },
-      { id: 17, nome: "Pizza Divergente", preco: 26, descricao: "Molho de tomates, lombo, cebola, bacon, catupiry ou muçarela, orégano e azeitonas pretas." },
-      { id: 18, nome: "Pizza Escolha Perfeita", preco: 26, descricao: "Molho de tomates, berinjela refogada, catupiry, orégano e azeitonas pretas." },
-      { id: 19, nome: "Pizza Forrest Gump", preco: 26, descricao: "Molho de tomates, camarão refogado, catupiry, orégano, salsinha e azeitonas pretas." },
-      { id: 20, nome: "Pizza Hanami", preco: 26, descricao: "Molho de tomates, muçarela, shimeji, tomate cereja, orégano, manjericão fresco e azeitonas pretas." },
-      { id: 21, nome: "Pizza Máfia no Divã", preco: 26, descricao: "Molho de tomates, berinjela refogada, catupiry, orégano e azeitonas pretas." },
-      { id: 22, nome: "Pizza Magia ao Luar", preco: 26, descricao: "Molho de tomates, palmito fatiado, catupiry, orégano, manjericão fresco e azeitonas pretas." },
-      { id: 23, nome: "Pizza Match Point", preco: 26, descricao: "Molho de tomates, peito de peru, cebola, muçarela, tomate cereja, orégano, manjericão fresco e azeitonas pretas." },
-      { id: 24, nome: "Pizza Procurando Nemo", preco: 26, descricao: "Molho de tomates, atum, cebola, tomate em rodelas, orégano e azeitonas pretas." },
-      { id: 25, nome: "Pizza Reino de Fogo", preco: 26, descricao: "Molho de tomates, carne bovina refogada, muçarela, cebola, pimenta biquinho, orégano e azeitonas pretas." },
+      {
+        id: 15,
+        nome: "Pizza Casa de Papel",
+        descricao: "Molho de tomates, cheddar, alho poró, peperoni, orégano e azeitonas pretas.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      },
+      {
+        id: 16,
+        nome: "Pizza Crepúsculo",
+        descricao: "Molho de tomates, muçarela, orégano, manjericão fresco, alho frito e azeitonas pretas.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      },
+      {
+        id: 17,
+        nome: "Pizza Divergente",
+        descricao: "Molho de tomates, lombo, cebola, bacon, catupiry ou muçarela, orégano e azeitonas pretas.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      },
+      {
+        id: 18,
+        nome: "Pizza Escolha Perfeita",
+        descricao: "Molho de tomates, berinjela refogada, catupiry, orégano e azeitonas pretas.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      },
+      {
+        id: 19,
+        nome: "Pizza Forrest Gump",
+        descricao: "Molho de tomates, camarão refogado, catupiry, orégano, salsinha e azeitonas pretas.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      },
+      {
+        id: 20,
+        nome: "Pizza Hanami",
+        descricao: "Molho de tomates, muçarela, shimeji, tomate cereja, orégano, manjericão fresco e azeitonas pretas.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      },
+      {
+        id: 21,
+        nome: "Pizza Máfia no Divã",
+        descricao: "Molho de tomates, berinjela refogada, catupiry, orégano e azeitonas pretas.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      },
+      {
+        id: 22,
+        nome: "Pizza Magia ao Luar",
+        descricao: "Molho de tomates, palmito fatiado, catupiry, orégano, manjericão fresco e azeitonas pretas.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      },
+      {
+        id: 23,
+        nome: "Pizza Match Point",
+        descricao: "Molho de tomates, peito de peru, cebola, muçarela, tomate cereja, orégano, manjericão fresco e azeitonas pretas.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      },
+      {
+        id: 24,
+        nome: "Pizza Procurando Nemo",
+        descricao: "Molho de tomates, atum, cebola, tomate em rodelas, orégano e azeitonas pretas.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      },
+      {
+        id: 25,
+        nome: "Pizza Reino de Fogo",
+        descricao: "Molho de tomates, carne bovina refogada, muçarela, cebola, pimenta biquinho, orégano e azeitonas pretas.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      }
     ],
   },
   Celebrity: { descricao: "Pizzas com o nome de Atores e Diretores do cinema mundial.", itens: [
-      { id: 26, nome: "Pizza Akira Kurosawa", preco: 26, descricao: "Molho de tomates, muçarela, shitake, alho poró, orégano e azeitonas pretas." },
-      { id: 27, nome: "Pizza Al Pacino", preco: 26, descricao: "Molho de tomates, muçarela, cebola, pepperoni, orégano e azeitonas pretas." },
-      { id: 28, nome: "Pizza Kevin Bacon", preco: 26, descricao: "Molho de tomates, muçarela, bacon, orégano, salsinha e azeitonas pretas." },
-      { id: 29, nome: "Pizza Robert De Niro", preco: 26, descricao: "Molho de tomates, presunto, ovos fatiados, cebola, catupiry, orégano e azeitonas pretas." },
-      { id: 30, nome: "Pizza Sob o Sol da Toscana", preco: 26, descricao: "Molho de tomates, muçarela de búfala, cebola, orégano, tomate seco, rúcula e azeitonas pretas." },
-      { id: 31, nome: "Pizza Tim Burton", preco: 26, descricao: "Molho de tomates, abobrinha refogada, alho poró, muçarela, orégano e azeitonas pretas." },
-      { id: 32, nome: "Pizza Wagner Moura", preco: 26, descricao: "Molho de tomates, brócolis refogado, alho frito, catupiry, orégano e azeitonas pretas." },
+      {
+        id: 26,
+        nome: "Pizza Akira Kurosawa",
+        descricao: "Molho de tomates, muçarela, shitake, alho poró, orégano e azeitonas pretas.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      },
+      {
+        id: 27,
+        nome: "Pizza Al Pacino",
+        descricao: "Molho de tomates, muçarela, cebola, pepperoni, orégano e azeitonas pretas.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      },
+      {
+        id: 28,
+        nome: "Pizza Kevin Bacon",
+        descricao: "Molho de tomates, muçarela, bacon, orégano, salsinha e azeitonas pretas.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      },
+      {
+        id: 29,
+        nome: "Pizza Robert De Niro",
+        descricao: "Molho de tomates, presunto, ovos fatiados, cebola, catupiry, orégano e azeitonas pretas.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      },
+      {
+        id: 30,
+        nome: "Pizza Sob o Sol da Toscana",
+        descricao: "Molho de tomates, muçarela de búfala, cebola, orégano, tomate seco, rúcula e azeitonas pretas.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      },
+      {
+        id: 31,
+        nome: "Pizza Tim Burton",
+        descricao: "Molho de tomates, abobrinha refogada, alho poró, muçarela, orégano e azeitonas pretas.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      },
+      {
+        id: 32,
+        nome: "Pizza Wagner Moura",
+        descricao: "Molho de tomates, brócolis refogado, alho frito, catupiry, orégano e azeitonas pretas.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      }
     ],
   },
   Cult: { descricao: "Pizzas com o nome de filmes consagrados pelo cinema.", itens: [
-      { id: 33, nome: "Pizza Bons Companheiros", preco: 26, descricao: "Molho de tomates, calabresa pré assada, catupiry cebola roxa e azeitonas pretas." },
-      { id: 34, nome: "Calzone Enigma da Pirâmide", preco: 26, descricao: "Calzone de Calabresa, Frango e Presunto. Todos são recheados com muçarela, catupiry e azeitonas verdes sem caroço" },
-      { id: 35, nome: "Pizza Glauber Rocha", preco: 26, descricao: "Molho de tomates, calabresa moída, coentro, cebola, muçarela, orégano e azeitonas pretas." },
-      { id: 36, nome: "Pizza Lavoura Arcaica", preco: 26, descricao: "Molho de tomates, escarola refogada, palmito, milho, cebola, orégano, tomate cereja e azeitonas pretas." },
-      { id: 37, nome: "Pizza Poderoso Chefão", preco: 26, descricao: "Molho de tomates, carne seca, champignon Paris, muçarela, pimenta biquinho, orégano, salsinha e azeitonas pretas." },
-      { id: 38, nome: "Pizza Pulp Fiction", preco: 26, descricao: "Molho de tomates, muçarela, calabresa fatiada, alho poró, orégano e azeitonas pretas." },
-      { id: 39, nome: "Pizza Quanto Mais Quente Melhor", preco: 26, descricao: "Molho de tomates, calabresa moída, molho de pimenta, pimenta biquinho, cebola, orégano e azeitonas pretas." },
-      { id: 40, nome: "Pizza Quinto Elemento", preco: 26, descricao: "Molho de tomates, muçarela, catupiry, provolone, gorgonzola, parmesão, orégano e azeitonas pretas." },
-      { id: 41, nome: "Pizza Tempos Modernos", preco: 26, descricao: "Molho de tomates, frango temperado, catupiry, orégano e azeitonas pretas." },
-      { id: 42, nome: "Pizza Três Mosqueteiros", preco: 26, descricao: "Molho de tomates, catupiry, provolone, parmesão, orégano e azeitonas pretas." },
-      { id: 43, nome: "Pizza Tubarão", preco: 26, descricao: "Molho de tomates, muçarela, filé de anchovas, orégano e azeitonas pretas." },
+      {
+        id: 33,
+        nome: "Pizza Bons Companheiros",
+        descricao: "Molho de tomates, calabresa pré assada, catupiry cebola roxa e azeitonas pretas.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      },
+      {
+        id: 34,
+        nome: "Calzone Enigma da Pirâmide",
+        descricao: "Calzone de Calabresa, Frango e Presunto. Todos são recheados com muçarela, catupiry e azeitonas verdes sem caroço.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      },
+      {
+        id: 35,
+        nome: "Pizza Glauber Rocha",
+        descricao: "Molho de tomates, calabresa moída, coentro, cebola, muçarela, orégano e azeitonas pretas.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      },
+      {
+        id: 36,
+        nome: "Pizza Lavoura Arcaica",
+        descricao: "Molho de tomates, escarola refogada, palmito, milho, cebola, orégano, tomate cereja e azeitonas pretas.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      },
+      {
+        id: 37,
+        nome: "Pizza Poderoso Chefão",
+        descricao: "Molho de tomates, carne seca, champignon Paris, muçarela, pimenta biquinho, orégano, salsinha e azeitonas pretas.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      },
+      {
+        id: 38,
+        nome: "Pizza Pulp Fiction",
+        descricao: "Molho de tomates, muçarela, calabresa fatiada, alho poró, orégano e azeitonas pretas.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      },
+      {
+        id: 39,
+        nome: "Pizza Quanto Mais Quente Melhor",
+        descricao: "Molho de tomates, calabresa moída, molho de pimenta, pimenta biquinho, cebola, orégano e azeitonas pretas.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      },
+      {
+        id: 40,
+        nome: "Pizza Quinto Elemento",
+        descricao: "Molho de tomates, muçarela, catupiry, provolone, gorgonzola, parmesão, orégano e azeitonas pretas.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      },
+      {
+        id: 41,
+        nome: "Pizza Tempos Modernos",
+        descricao: "Molho de tomates, frango temperado, catupiry, orégano e azeitonas pretas.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      },
+      {
+        id: 42,
+        nome: "Pizza Três Mosqueteiros",
+        descricao: "Molho de tomates, catupiry, provolone, parmesão, orégano e azeitonas pretas.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      },
+      {
+        id: 43,
+        nome: "Pizza Tubarão",
+        descricao: "Molho de tomates, muçarela, filé de anchovas, orégano e azeitonas pretas.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      }
     ],
   },
   Sundance: { descricao: "Pizzas Veganas com ingredientes de nossa própria fabricação..", itens: [
-      { id: 44, nome: "Pizza Capitão Fantástico", preco: 26, descricao: "Molho de tomates, abobrinha refogada, alho poró, orégano e azeitonas pretas." },
-      { id: 45, nome: "Pizza Muito Além do Jardim", preco: 26, descricao: "Molho de tomates, palmito, milho, tomate cereja selecionado, orégano, salsinha e azeitonas pretas." },
+      {
+        id: 44,
+        nome: "Pizza Capitão Fantástico",
+        descricao: "Molho de tomates, abobrinha refogada, alho poró, orégano e azeitonas pretas.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      },
+      {
+        id: 45,
+        nome: "Pizza Muito Além do Jardim",
+        descricao: "Molho de tomates, palmito, milho, tomate cereja selecionado, orégano, salsinha e azeitonas pretas.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      }
     ],
   },
   CineBijou: { descricao: "Nomes de Atores, Filmes e Personagens, entre outros, tornam nossas Pizzas Doces ainda mais divertidas.", itens: [
-      { id: 46, nome: "Pizza Carmem Miranda", preco: 26, descricao: "Banana, leite condensado, mel e canela." },
-      { id: 47, nome: "Pizza A Fantástica Fábrica de Chocolate", preco: 26, descricao: "Chocolate e chocolate granulado." },
-      { id: 48, nome: "Pizza MaryJane", preco: 26, descricao: "Chocolate ao leite e chocolate branco." },
-      { id: 49, nome: "Pizza Proposta Indecente", preco: 26, descricao: "Chocolate, morango fatiado e chocolate granulado." },
-      { id: 50, nome: "Pizza Segundas Intenções", preco: 26, descricao: "Banana e chocolate ao leite" },
-      { id: 51, nome: "Pizza Smurfs", preco: 26, descricao: "Chocolate e confeitos coloridos." },
+      {
+        id: 46,
+        nome: "Pizza Carmem Miranda",
+        descricao: "Banana, leite condensado, mel e canela.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      },
+      {
+        id: 47,
+        nome: "Pizza A Fantástica Fábrica de Chocolate",
+        descricao: "Chocolate e chocolate granulado.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      },
+      {
+        id: 48,
+        nome: "Pizza MaryJane",
+        descricao: "Chocolate ao leite e chocolate branco.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      },
+      {
+        id: 49,
+        nome: "Pizza Proposta Indecente",
+        descricao: "Chocolate, morango fatiado e chocolate granulado.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      },
+      {
+        id: 50,
+        nome: "Pizza Segundas Intenções",
+        descricao: "Banana e chocolate ao leite",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      },
+      {
+        id: 51,
+        nome: "Pizza Smurfs",
+        descricao: "Chocolate e confeitos coloridos.",
+        precoG: 49.9,
+        precoB: 39.9,
+        preco2G: 52.9,
+        preco2B: 42.9
+      }
     ],
   },
   Bomboniere: { descricao: "Momento de adoçar o paladar, igualzinho no cinema.", itens: [
-      { id: 51, nome: "Cafés", preco: 6, descricao: "Cafés e Chás em Cápsulas" },
-      { id: 52, nome: "Gabriela", preco: 8, descricao: "Café com canelinha" },
-      { id: 53, nome: "Casa Comigo", preco: 28, descricao: "Papaia batido com sorvete de creme, acompanha licor de cassis." },
-      { id: 54, nome: "Charlie Brownie e Snoopy", preco: 26, descricao: "Brownie e sorvete de creme." },
-      { id: 55, nome: "Coringa", preco: 15, descricao: "Espetacular pudim de leite com raspinhas de limão." },
-      { id: 56, nome: "Fantasmas se Divertem", preco: 16, descricao: "Camada de biscoitos, bananas fatiadas, doce de leite e chantilly polvilhado com canela." },
+      {
+        id: 51,
+        nome: "Cafés",
+        descricao: "Cafés e Chás em Cápsulas",
+        precoG: 6.0
+      },
+      {
+        id: 52,
+        nome: "Gabriela",
+        descricao: "Café com canelinha",
+        precoG: 8.0
+      },
+      {
+        id: 53,
+        nome: "Casa Comigo",
+        descricao: "Papaia batido com sorvete de creme, acompanha licor de cassis.",
+        precoG: 28.0
+      },
+      {
+        id: 54,
+        nome: "Charlie Brownie e Snoopy",
+        descricao: "Brownie e sorvete de creme.",
+        precoG: 26.0
+      },
+      {
+        id: 55,
+        nome: "Coringa",
+        descricao: "Espetacular pudim de leite com raspinhas de limão.",
+        precoG: 15.0
+      },
+      {
+        id: 56,
+        nome: "Fantasmas se Divertem",
+        descricao: "Camada de biscoitos, bananas fatiadas, doce de leite e chantilly polvilhado com canela.",
+        precoG: 16.0
+      }
     ],
   },
   Matinê: { descricao: "Censura livre: liberado para menores.", itens: [
-      { id: 57, nome: "Coca-Cola KS", preco: 9, descricao: "Para alegrar o dia" },
-      { id: 58, nome: "Coca-Cola lata", preco: 9, descricao: "Para alegrar o dia" },
-      { id: 59, nome: "Coca-Cola Zero lata", preco: 9, descricao: "Para alegrar o dia" },
-      { id: 60, nome: "Fanta Laranja lata", preco: 9, descricao: "Para alegrar o dia" },
-      { id: 61, nome: "Guaraná lata", preco: 9, descricao: "Para alegrar o dia" },
-      { id: 62, nome: "Guaraná Zero lata", preco: 9, descricao: "Para alegrar o dia" },
-      { id: 63, nome: "Pepsi lata", preco: 9, descricao: "Para alegrar o dia" },
-      { id: 64, nome: "Pepsi Black lata", preco: 9, descricao: "Para alegrar o dia" },
-      { id: 65, nome: "Schweppes Citrus lata", preco: 9, descricao: "Para alegrar o dia" },
-      { id: 66, nome: "Soda Limonada lata", preco: 9, descricao: "Para alegrar o dia" },
-      { id: 67, nome: "Tônica lata", preco: 9, descricao: "Para alegrar o dia" },
-      { id: 68, nome: "H2O", preco: 10, descricao: "Limoneto ou limão" },
-      { id: 69, nome: "Itubaina Retrô", preco: 8, descricao: "Para alegrar o dia" },
-      { id: 70, nome: "Limonada Suiça", preco: 16, descricao: "limão, água leite condensado" },
-      { id: 71, nome: "Suco Polpas", preco: 14, descricao: "abacaxi, acerola, graviola, maracujá, morango, uva" },
-      { id: 72, nome: "Suco em Lata", preco: 10, descricao: "Pêssego, Uva" },
-      { id: 73, nome: "Suco Natural", preco: 14, descricao: "Laranja, Limão" },
-      { id: 74, nome: "Cerveja Amanteigada", preco: 18, descricao: "Sabor doce, receita secreta vinda do mundo bruxo." },
-      { id: 75, nome: "Cocktail de fruta sem álcool", preco: 18, descricao: "Dois sabores a escolher: maracujá, morango, laranja, abacaxi, uva ou frutas vermelhas" },
-      { id: 76, nome: "Água Mineral com gás", preco: 7, descricao: "Para se hidratar" },
+      {
+        id: 57,
+        nome: "Coca-Cola KS",
+        descricao: "Para alegrar o dia",
+        precoG: 9.0
+      },
+      {
+        id: 58,
+        nome: "Coca-Cola lata",
+        descricao: "Para alegrar o dia",
+        precoG: 9.0
+      },
+      {
+        id: 59,
+        nome: "Coca-Cola Zero lata",
+        descricao: "Para alegrar o dia",
+        precoG: 9.0
+      },
+      {
+        id: 60,
+        nome: "Fanta Laranja lata",
+        descricao: "Para alegrar o dia",
+        precoG: 9.0
+      },
+      {
+        id: 61,
+        nome: "Guaraná lata",
+        descricao: "Para alegrar o dia",
+        precoG: 9.0
+      },
+      {
+        id: 62,
+        nome: "Guaraná Zero lata",
+        descricao: "Para alegrar o dia",
+        precoG: 9.0
+      },
+      {
+        id: 63,
+        nome: "Pepsi lata",
+        descricao: "Para alegrar o dia",
+        precoG: 9.0
+      },
+      {
+        id: 64,
+        nome: "Pepsi Black lata",
+        descricao: "Para alegrar o dia",
+        precoG: 9.0
+      },
+      {
+        id: 65,
+        nome: "Schweppes Citrus lata",
+        descricao: "Para alegrar o dia",
+        precoG: 9.0
+      },
+      {
+        id: 66,
+        nome: "Soda Limonada lata",
+        descricao: "Para alegrar o dia",
+        precoG: 9.0
+      },
+      {
+        id: 67,
+        nome: "Tônica lata",
+        descricao: "Para alegrar o dia",
+        precoG: 9.0
+      },
+      {
+        id: 68,
+        nome: "H2O",
+        descricao: "Limoneto ou limão",
+        precoG: 10.0
+      },
+      {
+        id: 69,
+        nome: "Itubaina Retrô",
+        descricao: "Para alegrar o dia",
+        precoG: 8.0
+      },
+      {
+        id: 70,
+        nome: "Limonada Suiça",
+        descricao: "limão, água leite condensado",
+        precoG: 16.0
+      },
+      {
+        id: 71,
+        nome: "Suco Polpas",
+        descricao: "abacaxi, acerola, graviola, maracujá, morango, uva",
+        precoG: 14.0
+      },
+      {
+        id: 72,
+        nome: "Suco em Lata",
+        descricao: "Pêssego, Uva",
+        precoG: 10.0
+      },
+      {
+        id: 73,
+        nome: "Suco Natural",
+        descricao: "Laranja, Limão",
+        precoG: 14.0
+      },
+      {
+        id: 74,
+        nome: "Cerveja Amanteigada",
+        descricao: "Sabor doce, receita secreta vinda do mundo bruxo.",
+        precoG: 18.0
+      },
+      {
+        id: 75,
+        nome: "Cocktail de fruta sem álcool",
+        descricao: "Dois sabores a escolher: maracujá, morango, laranja, abacaxi, uva ou frutas vermelhas.",
+        precoG: 18.0
+      },
+      {
+        id: 76,
+        nome: "Água Mineral com gás",
+        descricao: "Para se hidratar.",
+        precoG: 7.0
+      },
       {
         id: 77,
         nome: "Água Mineral sem gás",
-        descricao: "Com ou sem gás.",
-        precoG: 6.0,
-        precoB: 0,
-        preco2G: 0,
-        preco2B: 0
+        descricao: "Para se hidratar.",
+        precoG: 6.0
       },
-      { id: 78, nome: "Grinch", preco: 18, descricao: "O drink que vai conquistar seu coração! schweppes citrus, suco de abacaxi" },
-      { id: 79, nome: "Hotel Transilvânia", preco: 16, descricao: "Suco de limão e groselha" },
-      { id: 80, nome: "Sabre de Luz Azul", preco: 16, descricao: "Suco de limão aromatizado de aniso" },
-      { id: 81, nome: "Sabre de Luz Verde", preco: 16, descricao: "Suco de limão aromatizado de hortelã" },
-      { id: 82, nome: "La Doce Vida", preco: 16, descricao: "Soda italiana em diversos sabores" },
+      {
+        id: 78,
+        nome: "Grinch",
+        descricao: "O drink que vai conquistar seu coração! schweppes citrus, suco de abacaxi",
+        precoG: 18.0
+      },
+      {
+        id: 79,
+        nome: "Hotel Transilvânia",
+        descricao: "Suco de limão e groselha",
+        precoG: 16.0
+      },
+      {
+        id: 80,
+        nome: "Sabre de Luz Azul",
+        descricao: "Suco de limão aromatizado de aniso",
+        precoG: 16.0
+      },
+      {
+        id: 81,
+        nome: "Sabre de Luz Verde",
+        descricao: "Suco de limão aromatizado de hortelã",
+        precoG: 16.0
+      },
+      {
+        id: 82,
+        nome: "La Doce Vida",
+        descricao: "Soda italiana em diversos sabores",
+        precoG: 16.0
+      }
     ],
   },
   Lanterninha: { descricao: "Censura 18+ : No escurinho do cinema...", itens: [
-      { id: 83, nome: "Budweiser (sem álcool)", preco: 13, descricao: "Beba com moderação" },
-      { id: 84, nome: "Heineken (sem álcool)", preco: 14, descricao: "Beba com moderação" },
-      { id: 85, nome: "Heineken", preco: 14, descricao: "Beba com moderação" },
-      { id: 86, nome: "Malzbier", preco: 12, descricao: "Beba com moderação" },
-      { id: 87, nome: "Spaten", preco: 12, descricao: "Beba com moderação" },
-      { id: 88, nome: "Stella Artois", preco: 12, descricao: "Beba com moderação" },
-      { id: 89, nome: "Heineken 600ml", preco: 19, descricao: "Beba com moderação" },
-      { id: 90, nome: "Original 600ml", preco: 18, descricao: "Beba com moderação" },
-      { id: 91, nome: "Spaten 600ml", preco: 18, descricao: "Beba com moderação" },
-      { id: 92, nome: "Stella Artois 600ml", preco: 19, descricao: "Beba com moderação" },
-      { id: 93, nome: "Campari", preco: 18, descricao: "Beba com moderação" },
-      { id: 94, nome: "Rum Bacardi", preco: 18, descricao: "Beba com moderação" },
-      { id: 95, nome: "Whisky Red Label", preco: 20, descricao: "Beba com moderação" },
-      { id: 96, nome: "Cachaça Sagatiba", preco: 13, descricao: "Beba com moderação" },
-      { id: 97, nome: "Steinhaeger", preco: 12, descricao: "Beba com moderação" },
-      { id: 98, nome: "Saquê", preco: 12, descricao: "Beba com moderação" },
-      { id: 99, nome: "Vodka Smirnoff", preco: 13, descricao: "Beba com moderação" },
-      { id: 100, nome: "Vodka Absolut", preco: 20, descricao: "Beba com moderação" },
-      { id: 101, nome: "Cachaça Salinas", preco: 13, descricao: "Beba com moderação" },
-      { id: 102, nome: "Caipirinha de Cachaça", preco: 22, descricao: "Beba com moderação" },
-      { id: 103, nome: "Caipirinha de Sagatiba", preco: 32, descricao: "Beba com moderação" },
-      { id: 104, nome: "Caipirissima Rum Bacardi", preco: 22, descricao: "Beba com moderação" },
-      { id: 105, nome: "Caipiroska de Smirnoff", preco: 24, descricao: "Beba com moderação" },
-      { id: 106, nome: "Caipiroska de Absolut", preco: 32, descricao: "Beba com moderação" },
-      { id: 107, nome: "Saquerinha", preco: 24, descricao: "Beba com moderação" },
-      { id: 108, nome: "Grinch", preco: 22, descricao: "Schweppes citrus, suco de abacaxi e licor de menta" },
-      { id: 109, nome: "Campari Tônica", preco: 27, descricao: "Campari, tônica e rodelas de limão ou laranja" },
-      { id: 110, nome: "Cerveja Amanteigada", preco: 23, descricao: "Licor de marula" },
-      { id: 111, nome: "Piratas do Caribe", preco: 27, descricao: "Rum, limão, Coca-Cola e gelo" },
-      { id: 112, nome: "Sabre de Luz Azul", preco: 22, descricao: "Suco de limão com licor de anis" },
-      { id: 113, nome: "Sabre de Luz Verde", preco: 22, descricao: "Suco de limão com licor de menta" },
-      { id: 114, nome: "Gin Tônica", preco: 29, descricao: "Beba com moderação" }
+      {
+        id: 83,
+        nome: "Budweiser (sem álcool)",
+        descricao: "Beba com moderação",
+        precoG: 13.0
+      },
+      {
+        id: 84,
+        nome: "Heineken (sem álcool)",
+        descricao: "Beba com moderação",
+        precoG: 14.0
+      },
+      {
+        id: 85,
+        nome: "Heineken",
+        descricao: "Beba com moderação",
+        precoG: 14.0
+      },
+      {
+        id: 86,
+        nome: "Malzbier",
+        descricao: "Beba com moderação",
+        precoG: 12.0
+      },
+      {
+        id: 87,
+        nome: "Spaten",
+        descricao: "Beba com moderação",
+        precoG: 12.0
+      },
+      {
+        id: 88,
+        nome: "Stella Artois",
+        descricao: "Beba com moderação",
+        precoG: 12.0
+      },
+      {
+        id: 89,
+        nome: "Heineken 600ml",
+        descricao: "Beba com moderação",
+        precoG: 19.0
+      },
+      {
+        id: 90,
+        nome: "Original 600ml",
+        descricao: "Beba com moderação",
+        precoG: 18.0
+      },
+      {
+        id: 91,
+        nome: "Spaten 600ml",
+        descricao: "Beba com moderação",
+        precoG: 18.0
+      },
+      {
+        id: 92,
+        nome: "Stella Artois 600ml",
+        descricao: "Beba com moderação",
+        precoG: 19.0
+      },
+      {
+        id: 93,
+        nome: "Campari",
+        descricao: "Beba com moderação",
+        precoG: 18.0
+      },
+      {
+        id: 94,
+        nome: "Rum Bacardi",
+        descricao: "Beba com moderação",
+        precoG: 18.0
+      },
+      {
+        id: 95,
+        nome: "Whisky Red Label",
+        descricao: "Beba com moderação",
+        precoG: 20.0
+      },
+      {
+        id: 96,
+        nome: "Cachaça Sagatiba",
+        descricao: "Beba com moderação",
+        precoG: 13.0
+      },
+      {
+        id: 97,
+        nome: "Steinhaeger",
+        descricao: "Beba com moderação",
+        precoG: 12.0
+      },
+      {
+        id: 98,
+        nome: "Saquê",
+        descricao: "Beba com moderação",
+        precoG: 12.0
+      },
+      {
+        id: 99,
+        nome: "Vodka Smirnoff",
+        descricao: "Beba com moderação",
+        precoG: 13.0
+      },
+      {
+        id: 100,
+        nome: "Vodka Absolut",
+        descricao: "Beba com moderação",
+        precoG: 20.0
+      },
+      {
+        id: 101,
+        nome: "Cachaça Salinas",
+        descricao: "Beba com moderação",
+        precoG: 13.0
+      },
+      {
+        id: 102,
+        nome: "Caipirinha de Cachaça",
+        descricao: "Beba com moderação",
+        precoG: 22.0
+      },
+      {
+        id: 103,
+        nome: "Caipirinha de Sagatiba",
+        descricao: "Beba com moderação",
+        precoG: 32.0
+      },
+      {
+        id: 104,
+        nome: "Caipirissima Rum Bacardi",
+        descricao: "Beba com moderação",
+        precoG: 22.0
+      },
+      {
+        id: 105,
+        nome: "Caipiroska de Smirnoff",
+        descricao: "Beba com moderação",
+        precoG: 24.0
+      },
+      {
+        id: 106,
+        nome: "Caipiroska de Absolut",
+        descricao: "Beba com moderação",
+        precoG: 32.0
+      },
+      {
+        id: 107,
+        nome: "Saquerinha",
+        descricao: "Beba com moderação",
+        precoG: 24.0
+      },
+      {
+        id: 108,
+        nome: "Grinch",
+        descricao: "Schweppes citrus, suco de abacaxi e licor de menta",
+        precoG: 22.0
+      },
+      {
+        id: 109,
+        nome: "Campari Tônica",
+        descricao: "Campari, tônica e rodelas de limão ou laranja",
+        precoG: 27.0
+      },
+      {
+        id: 110,
+        nome: "Cerveja Amanteigada",
+        descricao: "Licor de marula",
+        precoG: 23.0
+      },
+      {
+        id: 111,
+        nome: "Piratas do Caribe",
+        descricao: "Rum, limão, Coca-Cola e gelo",
+        precoG: 27.0
+      },
+      {
+        id: 112,
+        nome: "Sabre de Luz Azul",
+        descricao: "Suco de limão com licor de anis",
+        precoG: 22.0
+      },
+      {
+        id: 113,
+        nome: "Sabre de Luz Verde",
+        descricao: "Suco de limão com licor de menta",
+        precoG: 22.0
+      },
+      {
+        id: 114,
+        nome: "Gin Tônica",
+        descricao: "Beba com moderação",
+        precoG: 29.0
+      }
     ],
   },
 };
