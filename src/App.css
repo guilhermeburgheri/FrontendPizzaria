@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-  max-width: 600px;
+  max-width: 1200px;
   margin: auto;
   padding: 16px;
 }
@@ -49,6 +49,27 @@ body {
   font-weight: bold;
 }
 
+.botoes-item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.botao.adicionar {
+  padding: 8px 12px;
+  border-radius: 6px;
+  background-color: #c56970;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.botao.adicionar:hover {
+  background-color: #d62828;
+}
+
 .adicionar {
   background-color: #2bb84b;
   color: white;
@@ -85,7 +106,7 @@ body {
 }
 
 .logo {
-  margin-bottom: 25px; /* Ajuste o valor conforme necessário */
+  margin-bottom: 20px;
 }
 
 .abas {
@@ -98,9 +119,9 @@ body {
 
 .aba {
   padding: 8px 16px;
-  border: 1px solid #007bff;
+  border: 1px solid #000000;
   background-color: white;
-  color: #007bff;
+  color: #000000;
   cursor: pointer;
   border-radius: 8px;
   font-weight: bold;
@@ -108,7 +129,7 @@ body {
 }
 
 .aba.ativa {
-  background-color: #007bff;
+  background-color: #f78528;
   color: white;
 }
 
