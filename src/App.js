@@ -50,73 +50,73 @@ const categorias = {
         id: 7,
         nome: "Pizza Goya",
         descricao: "Molho de tomates, calabresa fatiada, cebola, orégano e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 73,
+        precoB: 52,
+        preco2G: 73,
+        preco2B: 52
       },
       {
         id: 8,
         nome: "Pizza Bafta",
         descricao: "Molho de tomates, muçarela, provolone, catupiry, parmesão, orégano e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 82,
+        precoB: 58,
+        preco2G: 82,
+        preco2B: 58
       },
       {
         id: 9,
         nome: "Pizza Globo de Ouro",
         descricao: "Molho de tomates, muçarela, tomate triturado ricamente temperado, alho moído, parmesão, orégano e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 77,
+        precoB: 54,
+        preco2G: 77,
+        preco2B: 54
       },
       {
         id: 10,
         nome: "Pizza Kikito",
         descricao: "Molho de tomates, Milho, Catupiry original e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 73,
+        precoB: 52,
+        preco2G: 73,
+        preco2B: 52
       },
       {
         id: 11,
         nome: "Pizza Leão de Ouro",
         descricao: "Molho de tomates, muçarela, tomate em rodelas, parmesão, orégano, manjericão fresco e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 79,
+        precoB: 56,
+        preco2G: 79,
+        preco2B: 56
       },
       {
         id: 12,
         nome: "Pizza Oscar",
         descricao: "Molho de tomates, muçarela, tomate em rodelas, lombo, orégano, manjericão fresco e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 82,
+        precoB: 57,
+        preco2G: 82,
+        preco2B: 57
       },
       {
         id: 13,
         nome: "Pizza Palma de Ouro",
         descricao: "Molho de tomates, muçarela, orégano e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 76,
+        precoB: 53,
+        preco2G: 76,
+        preco2B: 53
       },
       {
         id: 14,
         nome: "Pizza Urso de Ouro",
         descricao: "Molho de tomates, calabresa fatiada, muçarela, orégano e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 79,
+        precoB: 56,
+        preco2G: 79,
+        preco2B: 56
       }
     ],
   },
@@ -126,100 +126,100 @@ const categorias = {
         id: 15,
         nome: "Pizza Casa de Papel",
         descricao: "Molho de tomates, cheddar, alho poró, peperoni, orégano e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 80,
+        precoB: 56,
+        preco2G: 80,
+        preco2B: 56
       },
       {
         id: 16,
         nome: "Pizza Crepúsculo",
         descricao: "Molho de tomates, muçarela, orégano, manjericão fresco, alho frito e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 72,
+        precoB: 50,
+        preco2G: 72,
+        preco2B: 50
       },
       {
         id: 17,
         nome: "Pizza Divergente",
         descricao: "Molho de tomates, lombo, cebola, bacon, catupiry ou muçarela, orégano e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 82,
+        precoB: 57,
+        preco2G: 82,
+        preco2B: 57
       },
       {
         id: 18,
         nome: "Pizza Escolha Perfeita",
         descricao: "Molho de tomates, berinjela refogada, catupiry, orégano e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 74,
+        precoB: 52,
+        preco2G: 74,
+        preco2B: 52
       },
       {
         id: 19,
         nome: "Pizza Forrest Gump",
         descricao: "Molho de tomates, camarão refogado, catupiry, orégano, salsinha e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 96,
+        precoB: 68,
+        preco2G: 96,
+        preco2B: 68
       },
       {
         id: 20,
         nome: "Pizza Hanami",
         descricao: "Molho de tomates, muçarela, shimeji, tomate cereja, orégano, manjericão fresco e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 92,
+        precoB: 65,
+        preco2G: 92,
+        preco2B: 65
       },
       {
         id: 21,
         nome: "Pizza Máfia no Divã",
         descricao: "Molho de tomates, berinjela refogada, catupiry, orégano e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 79,
+        precoB: 56,
+        preco2G: 79,
+        preco2B: 56
       },
       {
         id: 22,
         nome: "Pizza Magia ao Luar",
         descricao: "Molho de tomates, palmito fatiado, catupiry, orégano, manjericão fresco e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 83,
+        precoB: 58,
+        preco2G: 83,
+        preco2B: 58
       },
       {
         id: 23,
         nome: "Pizza Match Point",
         descricao: "Molho de tomates, peito de peru, cebola, muçarela, tomate cereja, orégano, manjericão fresco e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 83,
+        precoB: 58,
+        preco2G: 83,
+        preco2B: 58
       },
       {
         id: 24,
         nome: "Pizza Procurando Nemo",
         descricao: "Molho de tomates, atum, cebola, tomate em rodelas, orégano e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 82,
+        precoB: 58,
+        preco2G: 82,
+        preco2B: 58
       },
       {
         id: 25,
         nome: "Pizza Reino de Fogo",
         descricao: "Molho de tomates, carne bovina refogada, muçarela, cebola, pimenta biquinho, orégano e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 92,
+        precoB: 65,
+        preco2G: 92,
+        preco2B: 65
       }
     ],
   },
@@ -228,64 +228,64 @@ const categorias = {
         id: 26,
         nome: "Pizza Akira Kurosawa",
         descricao: "Molho de tomates, muçarela, shitake, alho poró, orégano e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 92,
+        precoB: 65,
+        preco2G: 92,
+        preco2B: 65
       },
       {
         id: 27,
         nome: "Pizza Al Pacino",
         descricao: "Molho de tomates, muçarela, cebola, pepperoni, orégano e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 82,
+        precoB: 58,
+        preco2G: 82,
+        preco2B: 58
       },
       {
         id: 28,
         nome: "Pizza Kevin Bacon",
         descricao: "Molho de tomates, muçarela, bacon, orégano, salsinha e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 75,
+        precoB: 53,
+        preco2G: 75,
+        preco2B: 53
       },
       {
         id: 29,
         nome: "Pizza Robert De Niro",
         descricao: "Molho de tomates, presunto, ovos fatiados, cebola, catupiry, orégano e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 83,
+        precoB: 58,
+        preco2G: 83,
+        preco2B: 58
       },
       {
         id: 30,
         nome: "Pizza Sob o Sol da Toscana",
         descricao: "Molho de tomates, muçarela de búfala, cebola, orégano, tomate seco, rúcula e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 89,
+        precoB: 62,
+        preco2G: 89,
+        preco2B: 62
       },
       {
         id: 31,
         nome: "Pizza Tim Burton",
         descricao: "Molho de tomates, abobrinha refogada, alho poró, muçarela, orégano e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 76,
+        precoB: 53,
+        preco2G: 76,
+        preco2B: 53
       },
       {
         id: 32,
         nome: "Pizza Wagner Moura",
         descricao: "Molho de tomates, brócolis refogado, alho frito, catupiry, orégano e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 77,
+        precoB: 54,
+        preco2G: 77,
+        preco2B: 54
       }
     ],
   },
@@ -294,100 +294,97 @@ const categorias = {
         id: 33,
         nome: "Pizza Bons Companheiros",
         descricao: "Molho de tomates, calabresa pré assada, catupiry cebola roxa e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 82,
+        precoB: 58,
+        preco2G: 82,
+        preco2B: 58
       },
       {
         id: 34,
         nome: "Calzone Enigma da Pirâmide",
         descricao: "Calzone de Calabresa, Frango e Presunto. Todos são recheados com muçarela, catupiry e azeitonas verdes sem caroço.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 96
       },
       {
         id: 35,
         nome: "Pizza Glauber Rocha",
         descricao: "Molho de tomates, calabresa moída, coentro, cebola, muçarela, orégano e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 76,
+        precoB: 53,
+        preco2G: 76,
+        preco2B: 53
       },
       {
         id: 36,
         nome: "Pizza Lavoura Arcaica",
         descricao: "Molho de tomates, escarola refogada, palmito, milho, cebola, orégano, tomate cereja e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 77,
+        precoB: 54,
+        preco2G: 77,
+        preco2B: 54
       },
       {
         id: 37,
         nome: "Pizza Poderoso Chefão",
         descricao: "Molho de tomates, carne seca, champignon Paris, muçarela, pimenta biquinho, orégano, salsinha e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 97,
+        precoB: 68,
+        preco2G: 97,
+        preco2B: 68
       },
       {
         id: 38,
         nome: "Pizza Pulp Fiction",
         descricao: "Molho de tomates, muçarela, calabresa fatiada, alho poró, orégano e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 80,
+        precoB: 56,
+        preco2G: 80,
+        preco2B: 56
       },
       {
         id: 39,
         nome: "Pizza Quanto Mais Quente Melhor",
         descricao: "Molho de tomates, calabresa moída, molho de pimenta, pimenta biquinho, cebola, orégano e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 75,
+        precoB: 53,
+        preco2G: 75,
+        preco2B: 53
       },
       {
         id: 40,
         nome: "Pizza Quinto Elemento",
         descricao: "Molho de tomates, muçarela, catupiry, provolone, gorgonzola, parmesão, orégano e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 87,
+        precoB: 61,
+        preco2G: 87,
+        preco2B: 61
       },
       {
         id: 41,
         nome: "Pizza Tempos Modernos",
         descricao: "Molho de tomates, frango temperado, catupiry, orégano e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 75,
+        precoB: 53,
+        preco2G: 75,
+        preco2B: 53
       },
       {
         id: 42,
         nome: "Pizza Três Mosqueteiros",
         descricao: "Molho de tomates, catupiry, provolone, parmesão, orégano e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 78,
+        precoB: 55,
+        preco2G: 78,
+        preco2B: 55
       },
       {
         id: 43,
         nome: "Pizza Tubarão",
         descricao: "Molho de tomates, muçarela, filé de anchovas, orégano e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 85,
+        precoB: 59,
+        preco2G: 85,
+        preco2B: 59
       }
     ],
   },
@@ -396,19 +393,19 @@ const categorias = {
         id: 44,
         nome: "Pizza Capitão Fantástico",
         descricao: "Molho de tomates, abobrinha refogada, alho poró, orégano e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 73,
+        precoB: 51,
+        preco2G: 73,
+        preco2B: 51
       },
       {
         id: 45,
         nome: "Pizza Muito Além do Jardim",
         descricao: "Molho de tomates, palmito, milho, tomate cereja selecionado, orégano, salsinha e azeitonas pretas.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 73,
+        precoB: 51,
+        preco2G: 73,
+        preco2B: 51
       }
     ],
   },
@@ -417,55 +414,55 @@ const categorias = {
         id: 46,
         nome: "Pizza Carmem Miranda",
         descricao: "Banana, leite condensado, mel e canela.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 75,
+        precoB: 53,
+        preco2G: 75,
+        preco2B: 53
       },
       {
         id: 47,
         nome: "Pizza A Fantástica Fábrica de Chocolate",
         descricao: "Chocolate e chocolate granulado.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 73,
+        precoB: 52,
+        preco2G: 73,
+        preco2B: 52
       },
       {
         id: 48,
         nome: "Pizza MaryJane",
         descricao: "Chocolate ao leite e chocolate branco.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 75,
+        precoB: 53,
+        preco2G: 75,
+        preco2B: 53
       },
       {
         id: 49,
         nome: "Pizza Proposta Indecente",
         descricao: "Chocolate, morango fatiado e chocolate granulado.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 76,
+        precoB: 53,
+        preco2G: 76,
+        preco2B: 53
       },
       {
         id: 50,
         nome: "Pizza Segundas Intenções",
         descricao: "Banana e chocolate ao leite",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 76,
+        precoB: 53,
+        preco2G: 76,
+        preco2B: 53
       },
       {
         id: 51,
         nome: "Pizza Smurfs",
         descricao: "Chocolate e confeitos coloridos.",
-        precoG: 49.9,
-        precoB: 39.9,
-        preco2G: 52.9,
-        preco2B: 42.9
+        precoG: 73,
+        precoB: 52,
+        preco2G: 73,
+        preco2B: 52
       }
     ],
   },
@@ -869,7 +866,7 @@ export default function App() {
   const [categoriaAtiva, setCategoriaAtiva] = useState("Trailer");
   const [modoMeia, setModoMeia] = useState(null);
 
-  const categoriasComum = ["Awards", "Premiere", "Celebrity", "Cult", "Sundance", "Cine Bijou"];
+  /* const categoriasComum = ["Awards", "Premiere", "Celebrity", "Cult", "Sundance", "CineBijou"]; */
   const categoriasEntradas = ["Trailer"];
   const categoriasDoces = ["Bomboniere"];
   const categoriasBebidas = ["Matinê", "Lanterninha"];
