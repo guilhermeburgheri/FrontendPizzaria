@@ -2,121 +2,119 @@ import React, { useState } from "react";
 import "./App.css";
 
 const categorias = {
-  Trailer: {
-    descricao: "Entradas/Porções",
-    itens: [
-      {
-        id: 1,
-        nome: "Bumblebee",
-        descricao: "Saborosos palitos de muçarela empanados.",
-        precoG: 32.0
-      },
-      {
-        id: 2,
-        nome: "Coppola",
-        descricao: "Calabresa fatiada ao forno e limão em fatias.",
-        precoG: 28.0
-      },
-      {
-        id: 3,
-        nome: "Insustentável Leveza do Ser",
-        descricao: "Salada de rúcula, palmito, tomate cereja e azeitonas pretas.",
-        precoG: 32.0
-      },
-      {
-        id: 4,
-        nome: "Perdido em Marte",
-        descricao: "Batata rústica frita, crocante por fora e macia por dentro.",
-        precoG: 27.0
-      },
-      {
-        id: 5,
-        nome: "Senhor dos Anéis",
-        descricao: "Deliciosos anéis de cebola empanados e fritos.",
-        precoG: 26.0
-      },
-      {
-        id: 6,
-        nome: "Stallone",
-        descricao: "Casquinha de massa crocante, acompanha nosso molho de tomates.",
-        precoG: 26.0
+  Trailer:
+    { descricao: "Entradas/Porções", itens: [
+        {
+          id: 1,
+          nome: "Bumblebee",
+          descricao: "Saborosos palitos de muçarela empanados.",
+          precoG: 32.0
+        },
+        {
+          id: 2,
+          nome: "Coppola",
+          descricao: "Calabresa fatiada ao forno e limão em fatias.",
+          precoG: 28.0
+        },
+        {
+          id: 3,
+          nome: "Insustentável Leveza do Ser",
+          descricao: "Salada de rúcula, palmito, tomate cereja e azeitonas pretas.",
+          precoG: 32.0
+        },
+        {
+          id: 4,
+          nome: "Perdido em Marte",
+          descricao: "Batata rústica frita, crocante por fora e macia por dentro.",
+          precoG: 27.0
+        },
+        {
+          id: 5,
+          nome: "Senhor dos Anéis",
+          descricao: "Deliciosos anéis de cebola empanados e fritos.",
+          precoG: 26.0
+        },
+        {
+          id: 6,
+          nome: "Stallone",
+          descricao: "Casquinha de massa crocante, acompanha nosso molho de tomates.",
+          precoG: 26.0
       }
     ],
   },
-  Awards: {
-    descricao: "Pizzas tradicionais e outras exclusivas com o nome dos prêmios dos mais importante festivais do cinema.",
-    itens: [
-      {
-        id: 7,
-        nome: "Pizza Goya",
-        descricao: "Molho de tomates, calabresa fatiada, cebola, orégano e azeitonas pretas.",
-        precoG: 73,
-        precoB: 52,
-        preco2G: 73,
-        preco2B: 52
-      },
-      {
-        id: 8,
-        nome: "Pizza Bafta",
-        descricao: "Molho de tomates, muçarela, provolone, catupiry, parmesão, orégano e azeitonas pretas.",
-        precoG: 82,
-        precoB: 58,
-        preco2G: 82,
-        preco2B: 58
-      },
-      {
-        id: 9,
-        nome: "Pizza Globo de Ouro",
-        descricao: "Molho de tomates, muçarela, tomate triturado ricamente temperado, alho moído, parmesão, orégano e azeitonas pretas.",
-        precoG: 77,
-        precoB: 54,
-        preco2G: 77,
-        preco2B: 54
-      },
-      {
-        id: 10,
-        nome: "Pizza Kikito",
-        descricao: "Molho de tomates, Milho, Catupiry original e azeitonas pretas.",
-        precoG: 73,
-        precoB: 52,
-        preco2G: 73,
-        preco2B: 52
-      },
-      {
-        id: 11,
-        nome: "Pizza Leão de Ouro",
-        descricao: "Molho de tomates, muçarela, tomate em rodelas, parmesão, orégano, manjericão fresco e azeitonas pretas.",
-        precoG: 79,
-        precoB: 56,
-        preco2G: 79,
-        preco2B: 56
-      },
-      {
-        id: 12,
-        nome: "Pizza Oscar",
-        descricao: "Molho de tomates, muçarela, tomate em rodelas, lombo, orégano, manjericão fresco e azeitonas pretas.",
-        precoG: 82,
-        precoB: 57,
-        preco2G: 82,
-        preco2B: 57
-      },
-      {
-        id: 13,
-        nome: "Pizza Palma de Ouro",
-        descricao: "Molho de tomates, muçarela, orégano e azeitonas pretas.",
-        precoG: 76,
-        precoB: 53,
-        preco2G: 76,
-        preco2B: 53
-      },
-      {
-        id: 14,
-        nome: "Pizza Urso de Ouro",
-        descricao: "Molho de tomates, calabresa fatiada, muçarela, orégano e azeitonas pretas.",
-        precoG: 79,
-        precoB: 56,
-        preco2G: 79,
-        preco2B: 56
+  Awards:
+    { descricao: "Pizzas tradicionais e outras exclusivas com o nome dos prêmios dos mais importante festivais do cinema.", itens: [
+        {
+          id: 7,
+          nome: "Pizza Goya",
+          descricao: "Molho de tomates, calabresa fatiada, cebola, orégano e azeitonas pretas.",
+          precoG: 73,
+          precoB: 52,
+          preco2G: 73,
+          preco2B: 52
+        },
+        {
+          id: 8,
+          nome: "Pizza Bafta",
+          descricao: "Molho de tomates, muçarela, provolone, catupiry, parmesão, orégano e azeitonas pretas.",
+          precoG: 82,
+          precoB: 58,
+          preco2G: 82,
+          preco2B: 58
+        },
+        {
+          id: 9,
+          nome: "Pizza Globo de Ouro",
+          descricao: "Molho de tomates, muçarela, tomate triturado ricamente temperado, alho moído, parmesão, orégano e azeitonas pretas.",
+          precoG: 77,
+          precoB: 54,
+          preco2G: 77,
+          preco2B: 54
+        },
+        {
+          id: 10,
+          nome: "Pizza Kikito",
+          descricao: "Molho de tomates, Milho, Catupiry original e azeitonas pretas.",
+          precoG: 73,
+          precoB: 52,
+          preco2G: 73,
+          preco2B: 52
+        },
+        {
+          id: 11,
+          nome: "Pizza Leão de Ouro",
+          descricao: "Molho de tomates, muçarela, tomate em rodelas, parmesão, orégano, manjericão fresco e azeitonas pretas.",
+          precoG: 79,
+          precoB: 56,
+          preco2G: 79,
+          preco2B: 56
+        },
+        {
+          id: 12,
+          nome: "Pizza Oscar",
+          descricao: "Molho de tomates, muçarela, tomate em rodelas, lombo, orégano, manjericão fresco e azeitonas pretas.",
+          precoG: 82,
+          precoB: 57,
+          preco2G: 82,
+          preco2B: 57
+        },
+        {
+          id: 13,
+          nome: "Pizza Palma de Ouro",
+          descricao: "Molho de tomates, muçarela, orégano e azeitonas pretas.",
+          precoG: 76,
+          precoB: 53,
+          preco2G: 76,
+          preco2B: 53
+        },
+        {
+          id: 14,
+          nome: "Pizza Urso de Ouro",
+          descricao: "Molho de tomates, calabresa fatiada, muçarela, orégano e azeitonas pretas.",
+          precoG: 79,
+          precoB: 56,
+          preco2G: 79,
+          preco2B: 56
       }
     ],
   },
@@ -223,7 +221,8 @@ const categorias = {
       }
     ],
   },
-  Celebrity: { descricao: "Pizzas com o nome de Atores e Diretores do cinema mundial.", itens: [
+  Celebrity:
+    { descricao: "Pizzas com o nome de Atores e Diretores do cinema mundial.", itens: [
       {
         id: 26,
         nome: "Pizza Akira Kurosawa",
@@ -289,7 +288,8 @@ const categorias = {
       }
     ],
   },
-  Cult: { descricao: "Pizzas com o nome de filmes consagrados pelo cinema.", itens: [
+  Cult:
+    { descricao: "Pizzas com o nome de filmes consagrados pelo cinema.", itens: [
       {
         id: 33,
         nome: "Pizza Bons Companheiros",
@@ -388,7 +388,8 @@ const categorias = {
       }
     ],
   },
-  Sundance: { descricao: "Pizzas Veganas com ingredientes de nossa própria fabricação..", itens: [
+  Sundance:
+    { descricao: "Pizzas Veganas com ingredientes de nossa própria fabricação..", itens: [
       {
         id: 44,
         nome: "Pizza Capitão Fantástico",
@@ -409,7 +410,8 @@ const categorias = {
       }
     ],
   },
-  CineBijou: { descricao: "Nomes de Atores, Filmes e Personagens, entre outros, tornam nossas Pizzas Doces ainda mais divertidas.", itens: [
+  CineBijou:
+    { descricao: "Nomes de Atores, Filmes e Personagens, entre outros, tornam nossas Pizzas Doces ainda mais divertidas.", itens: [
       {
         id: 46,
         nome: "Pizza Carmem Miranda",
@@ -466,7 +468,8 @@ const categorias = {
       }
     ],
   },
-  Bomboniere: { descricao: "Momento de adoçar o paladar, igualzinho no cinema.", itens: [
+  Bomboniere:
+    { descricao: "Momento de adoçar o paladar, igualzinho no cinema.", itens: [
       {
         id: 51,
         nome: "Cafés",
@@ -505,7 +508,8 @@ const categorias = {
       }
     ],
   },
-  Matinê: { descricao: "Censura livre: liberado para menores.", itens: [
+  Matinê:
+    { descricao: "Censura livre: liberado para menores.", itens: [
       {
         id: 57,
         nome: "Coca-Cola KS",
@@ -664,7 +668,8 @@ const categorias = {
       }
     ],
   },
-  Lanterninha: { descricao: "Censura 18+ : No escurinho do cinema...", itens: [
+  Lanterninha:
+    { descricao: "Censura 18+ : No escurinho do cinema...", itens: [
       {
         id: 83,
         nome: "Budweiser (sem álcool)",
