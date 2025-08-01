@@ -12,13 +12,43 @@ export default function Admin({ pedidosAtualizados }) {
 
   const removerItem = (pedidoIndex, itemIndex) => {
     const novosPedidos = [...pedidos];
-    novosPedidos[pedidoIndex].itens.splice(itemIndex, 1);
-    setPedidos(novosPedidos);
+    const pedido = novosPedidos[pedidoIndex];
+
+    // Remove o item
+    pedido.itens.splice(itemIndex, 1);
+
+    // Atualiza o total
+    pedido.total = pedido.itens.reduce((acc, item) => acc + item.preco, 0);
+
+    // Atualiza o pedido no backend
+    fetch(`http://localhost:5000/api/pedidos/${pedido.id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        itens: pedido.itens,
+        total: pedido.total,
+      }),
+    })
+      .then((res) => res.json())
+      .then(() => {
+        setPedidos(novosPedidos);
+      })
+      .catch((err) => {
+        console.error("Erro ao atualizar pedido:", err);
+      });
   };
 
-  const excluirPedido = (index) => {
-    const novosPedidos = pedidos.filter((_, i) => i !== index);
-    setPedidos(novosPedidos);
+  const excluirPedido = (id) => {
+    fetch(`http://localhost:5000/api/pedidos/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then(() => {
+        setPedidos((prev) => prev.filter((p) => p.id !== id));
+      })
+      .catch((err) => {
+        console.error("Erro ao excluir pedido:", err);
+      });
   };
 
   return (
@@ -29,7 +59,7 @@ export default function Admin({ pedidosAtualizados }) {
       ) : (
         pedidos.map((pedido, i) => (
           <div
-            key={i}
+            key={pedido.id}
             style={{
               border: "1px solid #ccc",
               margin: "1rem",
@@ -37,8 +67,11 @@ export default function Admin({ pedidosAtualizados }) {
               borderRadius: "8px",
             }}
           >
-            <h3>Pedido #{i + 1}</h3>
-            <p><strong>Horário:</strong> {new Date(pedido.horario).toLocaleString()}</p>
+            <h3>Pedido #{pedido.id}</h3>
+            <p>
+              <strong>Horário:</strong>{" "}
+              {new Date(pedido.criado_em).toLocaleString()}
+            </p>
             <ul>
               {pedido.itens.map((item, idx) => (
                 <li key={idx}>
@@ -47,8 +80,12 @@ export default function Admin({ pedidosAtualizados }) {
                 </li>
               ))}
             </ul>
-            <p><strong>Total do pedido:</strong> R$ {pedido.total?.toFixed(2)}</p>
-            <button onClick={() => excluirPedido(i)}>Excluir pedido</button>
+            <p>
+              <strong>Total do pedido:</strong> R$ {pedido.total?.toFixed(2)}
+            </p>
+            <button onClick={() => excluirPedido(pedido.id)}>
+              Excluir pedido
+            </button>
           </div>
         ))
       )}

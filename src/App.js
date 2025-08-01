@@ -44,6 +44,7 @@ export default function App() {
       total,
       horario: new Date().toISOString()
     };
+    console.log("Pedido enviado:", novoPedido);
 
     fetch("http://localhost:5000/api/pedidos", {
       method: "POST",
