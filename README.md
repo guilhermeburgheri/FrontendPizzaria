@@ -37,6 +37,13 @@ As categorias não são meramente organizacionais: elas fazem parte da experiên
 - Versão mobile com PWA.
 - QR Code na mesa para pedidos via smartphone.
 
+## 🎬 Ligação com o backend
+Este frontend foi desenvolvido sob medida para funcionar com o repositório:
+
+[BackendPizzaria](https://github.com/guilhermeburgheri/BackendPizzaria)
+
+A comunicação entre as partes acontece via requisições HTTP, com o frontend consumindo a API e exibindo os dados de forma temática e intuitiva.
+
 ## 🧑‍🍳 Para quem é?
 
 - Pizzarias temáticas que querem se destacar na apresentação do cardápio.
