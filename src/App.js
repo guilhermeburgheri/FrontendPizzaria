@@ -151,6 +151,14 @@ export default function App() {
                         <strong>{getBotaoTexto(item, "precoB")}</strong>
                       </button>
                     )}
+                    {item.preco > 0 && (
+                      <button
+                        className="botao adicionar"
+                        onClick={() => adicionarItem(item.nome, item.preco)}
+                      >
+                        <strong>Adicionar: R$ {item.preco.toFixed(2)}</strong>
+                      </button>
+                    )}
                     {item.preco2G > 0 && (
                       <button className="botao adicionar" onClick={() => iniciarMeiaMeia(item, 'G')}>
                         <strong>Adic. 2Sabores G</strong>
