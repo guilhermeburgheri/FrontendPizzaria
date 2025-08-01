@@ -1,4 +1,4 @@
-# Suprema Pizza Cine 🎬🍕
+# 🎬 Suprema Pizza Cine - Frontend 🍕
 
 **Suprema Pizza Cine** é uma aplicação web desenvolvida para oferecer uma experiência de pedidos envolvente e temática, inspirada no universo do cinema. Aqui, cada pizza é uma estrela, cada categoria um gênero, e cada clique te aproxima de um final delicioso.
 
@@ -32,8 +32,6 @@ As categorias não são meramente organizacionais: elas fazem parte da experiên
 
 ## 🚀 Próximos passos
 
-- Integração com backend para envio de pedidos (WhatsApp, API ou banco de dados).
-- Painel administrativo para controle de pedidos em tempo real.
 - Versão mobile com PWA.
 - QR Code na mesa para pedidos via smartphone.
 
