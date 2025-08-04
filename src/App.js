@@ -7,6 +7,8 @@ export default function App() {
   const [categorias, setCategorias] = useState({});
   const [carregando, setCarregando] = useState(true);
   const [carrinho, setCarrinho] = useState([]);
+  const [mesa, setMesa] = useState('');
+  const [confirmandoMesa, setConfirmandoMesa] = useState(false);
   const [categoriaAtiva, setCategoriaAtiva] = useState("Trailer");
   const [modoMeia, setModoMeia] = useState(null);
 
@@ -39,12 +41,22 @@ export default function App() {
   const total = carrinho.reduce((acc, item) => acc + item.preco, 0);
 
   const enviarPedido = () => {
+    if (!confirmandoMesa) {
+      setConfirmandoMesa(true);
+      return;
+    }
+
+    if (!mesa.trim()) {
+      alert("Por favor, informe o número da mesa antes de enviar o pedido.");
+      return;
+    }
+
     const novoPedido = {
+      cliente: `Mesa ${mesa}`,
       itens: carrinho,
       total,
-      horario: new Date().toISOString()
+      mesa
     };
-    console.log("Pedido enviado:", novoPedido);
 
     fetch("http://localhost:5000/api/pedidos", {
       method: "POST",
@@ -55,6 +67,8 @@ export default function App() {
       .then((data) => {
         alert("Pedido enviado! Total: R$ " + total.toFixed(2));
         setCarrinho([]);
+        setMesa('');
+        setConfirmandoMesa(false);
         setPedidosAtualizados((prev) => prev + 1);
       })
       .catch((err) => {
@@ -209,6 +223,20 @@ export default function App() {
               ))}
             </ul>
 
+            {confirmandoMesa && (
+              <div className="campo-mesa" style={{ marginBottom: '1rem' }}>
+                <label htmlFor="mesa"><strong>Número da Mesa:</strong></label>
+                <input
+                  id="mesa"
+                  type="text"
+                  value={mesa}
+                  onChange={(e) => setMesa(e.target.value)}
+                  placeholder="Ex: 12"
+                  style={{ marginLeft: '0.5rem', padding: '0.3rem', width: '80px' }}
+                />
+              </div>
+            )}
+
             <div className="total">
               <div className="valor-total">Total: R$ {total.toFixed(2)}</div>
               <button
@@ -216,7 +244,7 @@ export default function App() {
                 onClick={enviarPedido}
                 disabled={carrinho.length === 0}
               >
-                <strong>Enviar Pedido</strong>
+                <strong>{confirmandoMesa ? "Confirmar Pedido" : "Enviar Pedido"}</strong>
               </button>
             </div>
           </div>

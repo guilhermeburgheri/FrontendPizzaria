@@ -68,10 +68,7 @@ export default function Admin({ pedidosAtualizados }) {
             }}
           >
             <h3>Pedido #{pedido.id}</h3>
-            <p>
-              <strong>Horário:</strong>{" "}
-              {new Date(pedido.criado_em).toLocaleString()}
-            </p>
+            <p><strong>Mesa:</strong> {pedido.mesa || "Não informado"}</p>
             <ul>
               {pedido.itens.map((item, idx) => (
                 <li key={idx}>
