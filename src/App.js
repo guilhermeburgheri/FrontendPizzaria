@@ -10,6 +10,7 @@ export default function App() {
   const [mesa, setMesa] = useState('');
   const [confirmandoMesa, setConfirmandoMesa] = useState(false);
   const [categoriaAtiva, setCategoriaAtiva] = useState("Trailer");
+  const [menu2, setMenu2] = useState(null);
   const [modoMeia, setModoMeia] = useState(null);
 
   const categoriasEntradas = ["Trailer"];
@@ -192,19 +193,47 @@ export default function App() {
             {modoMeia && (
               <div className="modal">
                 <h3>Escolha o segundo sabor ({modoMeia.tamanho})</h3>
-                <button className="fechar" onClick={() => setModoMeia(null)}>Cancelar</button>
-                <div className="menu">
-                  {categorias[categoriaAtiva].itens
-                    .filter((i) => i.id !== modoMeia.item.id)
-                    .map((item2) => (
-                      <div key={item2.id} className="item">
-                        <strong>{item2.nome}</strong>
-                        <button className="botao adicionar" onClick={() => concluirMeiaMeia(item2)}>
-                          Escolher este sabor
+                <button className="fechar" onClick={() => {
+                  setModoMeia(null);
+                  setMenu2(null);
+                }}>
+                  Cancelar
+                </button>
+
+                {!menu2 ? (
+                  <>
+                    <h4>Escolha o menu</h4>
+                    {Object.entries(categorias)
+                      .filter(([nomeMenu]) =>
+                        ["Awards", "Premiere", "Celebrity", "Cult", "Sundance", "CineBijou"].includes(nomeMenu)
+                      )
+                      .map(([nomeMenu, dados]) => (
+                        <button
+                          key={nomeMenu}
+                          className="botao"
+                          onClick={() => setMenu2(dados)}
+                        >
+                          {nomeMenu}
                         </button>
-                      </div>
-                    ))}
-                </div>
+                      ))}
+                  </>
+                ) : (
+                  <div className="menu">
+                    {menu2.itens
+                      .filter((i) => i.id !== modoMeia.item.id)
+                      .map((item2) => (
+                        <div key={item2.id} className="item">
+                          <strong>{item2.nome}</strong>
+                          <button className="botao adicionar" onClick={() => {
+                            concluirMeiaMeia(item2);
+                            setMenu2(null);
+                          }}>
+                            Escolher este sabor
+                          </button>
+                        </div>
+                      ))}
+                  </div>
+                )}
               </div>
             )}
 
