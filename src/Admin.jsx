@@ -95,6 +95,11 @@ export default function Admin({ pedidosAtualizados }) {
                     Pedido #{pedido.id}
                   </p>
                 )}
+                {pedido.observacoes && (
+                  <p style={{ margin: '0.3rem 0' }}>
+                    <strong>Observações:</strong> {pedido.observacoes}
+                  </p>
+                )}
                 <ul>
                   {pedido.itens.map((item, idx) => (
                     <li key={idx}>

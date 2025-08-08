@@ -9,6 +9,7 @@ export default function App() {
   const [carrinho, setCarrinho] = useState([]);
   const [mesa, setMesa] = useState('');
   const [confirmandoMesa, setConfirmandoMesa] = useState(false);
+  const [observacoes, setObservacoes] = useState('');
   const [categoriaAtiva, setCategoriaAtiva] = useState("Trailer");
   const [menu2, setMenu2] = useState(null);
   const [modoMeia, setModoMeia] = useState(null);
@@ -56,7 +57,8 @@ export default function App() {
       cliente: `Mesa ${mesa}`,
       itens: carrinho,
       total,
-      mesa
+      mesa,
+      observacoes
     };
 
     fetch("http://localhost:5000/api/pedidos", {
@@ -70,6 +72,7 @@ export default function App() {
         setCarrinho([]);
         setMesa('');
         setConfirmandoMesa(false);
+        setObservacoes('');
         setPedidosAtualizados((prev) => prev + 1);
       })
       .catch((err) => {
@@ -263,6 +266,17 @@ export default function App() {
                   placeholder="Ex: 12"
                   style={{ marginLeft: '0.5rem', padding: '0.3rem', width: '80px' }}
                 />
+                <div className="campo-observacoes" style={{ marginBottom: '1rem' }}>
+                  <label htmlFor="obs"><strong>Observações:</strong></label>
+                  <textarea
+                    id="obs"
+                    value={observacoes}
+                    onChange={(e) => setObservacoes(e.target.value)}
+                    placeholder="Ex: Nome do produto + observação"
+                    rows={3}
+                    style={{ display: 'block', width: '100%', marginTop: '0.5rem', padding: '0.4rem' }}
+                  />
+                </div>
               </div>
             )}
 
