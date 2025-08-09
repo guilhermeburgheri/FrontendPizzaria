@@ -1,14 +1,25 @@
+html, body, #root {
+  height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 body {
   font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
+  background-color: #f1f1f1;
   margin: 0;
   padding: 0;
 }
 
 .container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 16px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 20px;
 }
 
 .titulo {
@@ -18,19 +29,69 @@ body {
   margin-bottom: 16px;
 }
 
-.menu, .carrinho {
-  display: grid;
-  gap: 12px;
+.descricao {
+  max-width: 900px;
+  margin: 0 auto 16px;
+  text-align: center;
+  color: #333;
 }
 
-.item, .item-carrinho {
-  border: 1px solid #ccc;
+.logo {
+  display: flex;
+  justify-content: center;
+  margin: 4px 0 20px;
+}
+.logo-imagem {
+  width: clamp(80px, 12vw, 200px);
+  height: auto;
+  display: block;
+}
+
+.abas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+  justify-content: center;
+  overflow: hidden;
+}
+.aba {
+  padding: 8px 16px;
+  border: 1px solid #000;
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
   border-radius: 8px;
-  padding: 12px;
-  background: #fff;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  white-space: normal;
+}
+.aba.ativa {
+  background-color: #f78528;
+  color: #fff;
+}
+.aba:hover:not(.ativa) {
+  background-color: #e0f0ff;
 }
 
-.info, .acoes {
+
+.menu,
+.carrinho {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.item,
+.item-carrinho {
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  padding: 14px;
+  background: #fff;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+}
+.info,
+.acoes {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -48,7 +109,6 @@ body {
   cursor: pointer;
   font-weight: bold;
 }
-
 .botoes-item {
   display: flex;
   flex-wrap: wrap;
@@ -60,79 +120,49 @@ body {
   padding: 8px 12px;
   border-radius: 6px;
   background-color: #c56970;
-  color: white;
+  color: #fff;
   border: none;
-  cursor: pointer;
   transition: background-color 0.3s;
 }
-
 .botao.adicionar:hover {
   background-color: #d62828;
 }
 
-.adicionar {
-  background-color: #2bb84b;
-  color: white;
-}
-
-.enviar {
-  background-color: #007bff;
-  color: white;
-  margin-top: 12px;
-}
-
-.remover {
-  background-color: transparent;
-  color: #ff394d;
-  border: none;
-  cursor: pointer;
-}
+.adicionar { background-color: #2bb84b; color: #fff; }
+.enviar { background-color: #007bff; color: #fff; margin-top: 12px; }
+.remover { background: transparent; color: #ff394d; border: none; cursor: pointer; }
 
 .total {
-  margin-top: 16px;
-  text-align: right;
+  margin-top: 20px;
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-end;
 }
-
 .valor-total {
   font-size: 18px;
   font-weight: bold;
 }
 
-.logo-imagem {
-  max-width: 200px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
+.modal {
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 12px;
 }
 
-.logo {
-  margin-bottom: 20px;
+@media (min-width: 1440px) {
+  .container { max-width: 1200px; }
+  .menu, .carrinho {
+    gap: 18px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
 }
-
-.abas {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 16px;
-  justify-content: center;
-}
-
-.aba {
-  padding: 8px 16px;
-  border: 1px solid #000000;
-  background-color: white;
-  color: #000000;
-  cursor: pointer;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.aba.ativa {
-  background-color: #f78528;
-  color: white;
-}
-
-.aba:hover:not(.ativa) {
-  background-color: #e0f0ff;
+@media (max-width: 420px) {
+  .container { padding: 12px; }
+  .item, .item-carrinho {
+    border-radius: 8px;
+    padding: 12px;
+  }
 }

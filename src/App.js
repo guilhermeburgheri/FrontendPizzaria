@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Admin from "./Admin";
+import "./App.css";
 
 export default function App() {
   const [modoAdmin, setModoAdmin] = useState(false);
@@ -22,14 +23,24 @@ export default function App() {
     fetch("http://localhost:5000/api/cardapio")
       .then((res) => res.json())
       .then((data) => {
-        console.log("Cardápio carregado:", data); // isso deve aparecer
         setCategorias(data);
         setCarregando(false);
       })
       .catch((err) => {
-        console.error("Erro ao carregar o cardápio:", err); // veja no console
+        console.error("Erro ao carregar o cardápio:", err);
         setCarregando(false);
       });
+  }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.ctrlKey && e.key.toLowerCase() === "q") {
+        e.preventDefault();
+        setModoAdmin((prev) => !prev);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
   const adicionarItem = (nome, preco) => {
@@ -67,7 +78,7 @@ export default function App() {
       body: JSON.stringify(novoPedido),
     })
       .then((res) => res.json())
-      .then((data) => {
+      .then(() => {
         alert("Pedido enviado! Total: R$ " + total.toFixed(2));
         setCarrinho([]);
         setMesa('');
@@ -82,7 +93,7 @@ export default function App() {
   };
 
   const iniciarMeiaMeia = (item, tamanho) => {
-    const preco = tamanho === 'G' ? item.precoG : item.precoB;
+    const preco = tamanho === "G" ? item.precoG : item.precoB;
     setModoMeia({ item, tamanho, preco });
   };
 
@@ -97,16 +108,23 @@ export default function App() {
 
   const getBotaoTexto = (item, tipo) => {
     const preco = item[tipo];
-    if (categoriasEntradas.includes(categoriaAtiva)) return `Adicionar entrada: R$ ${preco.toFixed(2)}`;
-    if (categoriasDoces.includes(categoriaAtiva)) return `Adicionar itens: R$ ${preco.toFixed(2)}`;
-    if (categoriasBebidas.includes(categoriaAtiva)) return `Adicionar bebidas: R$ ${preco.toFixed(2)}`;
+    if (categoriasEntradas.includes(categoriaAtiva))
+      return `Adicionar entrada: R$ ${preco.toFixed(2)}`;
+    if (categoriasDoces.includes(categoriaAtiva))
+      return `Adicionar itens: R$ ${preco.toFixed(2)}`;
+    if (categoriasBebidas.includes(categoriaAtiva))
+      return `Adicionar bebidas: R$ ${preco.toFixed(2)}`;
     if (tipo === "precoG") return `Adic. Pizza Grande: R$ ${preco.toFixed(2)}`;
     if (tipo === "precoB") return `Adic. Pizza Broto: R$ ${preco.toFixed(2)}`;
     return `Adicionar: R$ ${preco.toFixed(2)}`;
   };
 
   const getNomeItem = (item, tipo) => {
-    if ([...categoriasEntradas, ...categoriasDoces, ...categoriasBebidas].includes(categoriaAtiva)) {
+    if (
+      [...categoriasEntradas, ...categoriasDoces, ...categoriasBebidas].includes(
+        categoriaAtiva
+      )
+    ) {
       return item.nome;
     }
     return `${item.nome} ${tipo}`;
@@ -116,20 +134,19 @@ export default function App() {
     return <div>Carregando cardápio...</div>;
   }
 
-
   return (
     <div className="container">
-      <button onClick={() => setModoAdmin(!modoAdmin)} className="botao">
-        {modoAdmin ? "Voltar para o cliente" : "Ir para o administrador"}
-      </button>
-
       {modoAdmin ? (
         <Admin pedidosAtualizados={pedidosAtualizados} />
       ) : (
         <>
           <div className="container">
             <div className="logo">
-              <img src="/LogoSuprema.png" alt="Suprema Pizza Cine Logo" className="logo-imagem" />
+              <img
+                src="/LogoSuprema.png"
+                alt="Suprema Pizza Cine Logo"
+                className="logo-imagem"
+              />
             </div>
 
             <div className="abas">
@@ -157,7 +174,9 @@ export default function App() {
                     {item.precoG > 0 && (
                       <button
                         className="botao adicionar"
-                        onClick={() => adicionarItem(getNomeItem(item, "G"), item.precoG)}
+                        onClick={() =>
+                          adicionarItem(getNomeItem(item, "G"), item.precoG)
+                        }
                       >
                         <strong>{getBotaoTexto(item, "precoG")}</strong>
                       </button>
@@ -165,7 +184,9 @@ export default function App() {
                     {item.precoB > 0 && (
                       <button
                         className="botao adicionar"
-                        onClick={() => adicionarItem(getNomeItem(item, "B"), item.precoB)}
+                        onClick={() =>
+                          adicionarItem(getNomeItem(item, "B"), item.precoB)
+                        }
                       >
                         <strong>{getBotaoTexto(item, "precoB")}</strong>
                       </button>
@@ -179,12 +200,18 @@ export default function App() {
                       </button>
                     )}
                     {item.preco2G > 0 && (
-                      <button className="botao adicionar" onClick={() => iniciarMeiaMeia(item, 'G')}>
+                      <button
+                        className="botao adicionar"
+                        onClick={() => iniciarMeiaMeia(item, "G")}
+                      >
                         <strong>Adic. 2Sabores G</strong>
                       </button>
                     )}
                     {item.preco2B > 0 && (
-                      <button className="botao adicionar" onClick={() => iniciarMeiaMeia(item, 'B')}>
+                      <button
+                        className="botao adicionar"
+                        onClick={() => iniciarMeiaMeia(item, "B")}
+                      >
                         <strong>Adic. 2Sabores B</strong>
                       </button>
                     )}
@@ -196,10 +223,13 @@ export default function App() {
             {modoMeia && (
               <div className="modal">
                 <h3>Escolha o segundo sabor ({modoMeia.tamanho})</h3>
-                <button className="fechar" onClick={() => {
-                  setModoMeia(null);
-                  setMenu2(null);
-                }}>
+                <button
+                  className="fechar"
+                  onClick={() => {
+                    setModoMeia(null);
+                    setMenu2(null);
+                  }}
+                >
                   Cancelar
                 </button>
 
@@ -208,7 +238,14 @@ export default function App() {
                     <h4>Escolha o menu</h4>
                     {Object.entries(categorias)
                       .filter(([nomeMenu]) =>
-                        ["Awards", "Premiere", "Celebrity", "Cult", "Sundance", "CineBijou"].includes(nomeMenu)
+                        [
+                          "Awards",
+                          "Premiere",
+                          "Celebrity",
+                          "Cult",
+                          "Sundance",
+                          "CineBijou",
+                        ].includes(nomeMenu)
                       )
                       .map(([nomeMenu, dados]) => (
                         <button
@@ -227,10 +264,13 @@ export default function App() {
                       .map((item2) => (
                         <div key={item2.id} className="item">
                           <strong>{item2.nome}</strong>
-                          <button className="botao adicionar" onClick={() => {
-                            concluirMeiaMeia(item2);
-                            setMenu2(null);
-                          }}>
+                          <button
+                            className="botao adicionar"
+                            onClick={() => {
+                              concluirMeiaMeia(item2);
+                              setMenu2(null);
+                            }}
+                          >
                             Escolher este sabor
                           </button>
                         </div>
@@ -257,24 +297,37 @@ export default function App() {
 
             {confirmandoMesa && (
               <div className="campo-mesa" style={{ marginBottom: '1rem' }}>
-                <label htmlFor="mesa"><strong>Número da Mesa:</strong></label>
+                <label htmlFor="mesa">
+                  <strong>Número da Mesa:</strong>
+                </label>
                 <input
                   id="mesa"
                   type="text"
                   value={mesa}
                   onChange={(e) => setMesa(e.target.value)}
                   placeholder="Ex: 12"
-                  style={{ marginLeft: '0.5rem', padding: '0.3rem', width: '80px' }}
+                  style={{
+                    marginLeft: "0.5rem",
+                    padding: "0.3rem",
+                    width: "80px",
+                  }}
                 />
-                <div className="campo-observacoes" style={{ marginBottom: '1rem' }}>
-                  <label htmlFor="obs"><strong>Observações:</strong></label>
+                <div className="campo-observacoes" style={{ marginTop: '1rem' }}>
+                  <label htmlFor="obs">
+                    <strong>Observações:</strong>
+                  </label>
                   <textarea
                     id="obs"
                     value={observacoes}
                     onChange={(e) => setObservacoes(e.target.value)}
                     placeholder="Ex: Nome do produto + observação"
                     rows={3}
-                    style={{ display: 'block', width: '100%', marginTop: '0.5rem', padding: '0.4rem' }}
+                    style={{
+                      display: 'block',
+                      width: '100%',
+                      marginTop: '0.5rem',
+                      padding: '0.4rem',
+                    }}
                   />
                 </div>
               </div>
@@ -287,7 +340,9 @@ export default function App() {
                 onClick={enviarPedido}
                 disabled={carrinho.length === 0}
               >
-                <strong>{confirmandoMesa ? "Confirmar Pedido" : "Enviar Pedido"}</strong>
+                <strong>
+                  {confirmandoMesa ? "Confirmar Pedido" : "Enviar Pedido"}
+                </strong>
               </button>
             </div>
           </div>
