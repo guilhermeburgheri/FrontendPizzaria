@@ -20,7 +20,7 @@ export default function App() {
   const categoriasBebidas = ["Matinê", "Lanterninha"];
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/cardapio")
+    fetch("/api/cardapio")
       .then((res) => res.json())
       .then((data) => {
         setCategorias(data);
@@ -72,7 +72,7 @@ export default function App() {
       observacoes
     };
 
-    fetch("http://localhost:5000/api/pedidos", {
+    fetch("/api/pedidos", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(novoPedido),

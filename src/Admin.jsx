@@ -4,7 +4,7 @@ export default function Admin({ pedidosAtualizados }) {
   const [pedidos, setPedidos] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/pedidos")
+    fetch("/api/pedidos")
       .then((res) => res.json())
       .then((data) => {
         // Garantindo o formato correto dos itens
@@ -26,7 +26,7 @@ export default function Admin({ pedidosAtualizados }) {
     const novoTotal = novosItens.reduce((acc, item) => acc + item.preco, 0);
 
     // Atualiza no backend
-    fetch(`http://localhost:5000/api/pedidos/${pedidoId}`, {
+    fetch(`/api/pedidos/${pedidoId}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ itens: novosItens, total: novoTotal }),
@@ -44,7 +44,7 @@ export default function Admin({ pedidosAtualizados }) {
   };
 
   const excluirPedido = (id) => {
-    fetch(`http://localhost:5000/api/pedidos/${id}`, {
+    fetch(`/api/pedidos/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
