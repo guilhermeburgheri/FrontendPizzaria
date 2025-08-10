@@ -166,3 +166,46 @@ body {
     padding: 12px;
   }
 }
+
+/* barra de busca */
+.busca {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin: 6px 0 12px;
+}
+.busca input {
+  width: min(700px, 90%);
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+.busca input:focus {
+  border-color: #f78528;
+  box-shadow: 0 0 0 2px rgba(247, 133, 40, 0.15);
+}
+.busca .botao.limpar {
+  background: #eee;
+  color: #333;
+}
+
+.chip-categoria {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 8px;
+  font-size: 12px;
+  border-radius: 999px;
+  background: #f1f1f1;
+  color: #555;
+  vertical-align: middle;
+}
+
+/* título dos resultados */
+.resultado-titulo {
+  text-align: center;
+  font-size: 16px;
+  margin: 8px 0 6px;
+  color: #444;
+}

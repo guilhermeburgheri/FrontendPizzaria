@@ -6,6 +6,7 @@ export default function App() {
   const [modoAdmin, setModoAdmin] = useState(false);
   const [pedidosAtualizados, setPedidosAtualizados] = useState(0);
   const [categorias, setCategorias] = useState({});
+  const [busca, setBusca] = useState('');
   const [carregando, setCarregando] = useState(true);
   const [carrinho, setCarrinho] = useState([]);
   const [mesa, setMesa] = useState('');
@@ -52,6 +53,27 @@ export default function App() {
   };
 
   const total = carrinho.reduce((acc, item) => acc + item.preco, 0);
+
+  /* Pesquisar sem acentos */
+    const normalizar = (s) =>
+      (s || '')
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase();
+
+    const resultadosBusca =
+      busca.trim().length >= 2
+        ? Object.entries(categorias).flatMap(([cat, data]) =>
+          (data?.itens || [])
+            .filter(
+              (it) =>
+                normalizar(it.nome).includes(normalizar(busca)) ||
+                normalizar(it.descricao).includes(normalizar(busca))
+            )
+            .map((it) => ({ ...it, __categoria: cat }))
+        )
+        : [];
+
 
   const enviarPedido = () => {
     if (!confirmandoMesa) {
@@ -134,6 +156,52 @@ export default function App() {
     return <div>Carregando cardápio...</div>;
   }
 
+  const renderItemCard = (item) => (
+    <div key={`${item.__categoria || categoriaAtiva}-${item.id}`} className="item">
+      <strong>{item.nome}</strong>
+      {item.__categoria && (
+        <span className="chip-categoria">{item.__categoria}</span>
+      )}
+      <p className="item-descricao">{item.descricao}</p>
+      <div className="botoes-item">
+        {item.precoG > 0 && (
+          <button
+            className="botao adicionar"
+            onClick={() => adicionarItem(getNomeItem(item, "G"), item.precoG)}
+          >
+            <strong>{getBotaoTexto(item, "precoG")}</strong>
+          </button>
+        )}
+        {item.precoB > 0 && (
+          <button
+            className="botao adicionar"
+            onClick={() => adicionarItem(getNomeItem(item, "B"), item.precoB)}
+          >
+            <strong>{getBotaoTexto(item, "precoB")}</strong>
+          </button>
+        )}
+        {item.preco > 0 && (
+          <button
+            className="botao adicionar"
+            onClick={() => adicionarItem(item.nome, item.preco)}
+          >
+            <strong>Adicionar: R$ {item.preco.toFixed(2)}</strong>
+          </button>
+        )}
+        {item.preco2G > 0 && (
+          <button className="botao adicionar" onClick={() => iniciarMeiaMeia(item, "G")}>
+            <strong>Adic. 2Sabores G</strong>
+          </button>
+        )}
+        {item.preco2B > 0 && (
+          <button className="botao adicionar" onClick={() => iniciarMeiaMeia(item, "B")}>
+            <strong>Adic. 2Sabores B</strong>
+          </button>
+        )}
+      </div>
+    </div>
+  );
+
   return (
     <div className="container">
       {modoAdmin ? (
@@ -147,6 +215,21 @@ export default function App() {
                 alt="Suprema Pizza Cine Logo"
                 className="logo-imagem"
               />
+            </div>
+
+            <div className="busca">
+              <input
+                type="text"
+                value={busca}
+                onChange={(e) => setBusca(e.target.value)}
+                placeholder="Buscar item por nome ou descrição..."
+                aria-label="Campo de busca de itens"
+              />
+              {busca && (
+                <button className="botao limpar" onClick={() => setBusca('')}>
+                  Limpar
+                </button>
+              )}
             </div>
 
             <div className="abas">
@@ -165,59 +248,15 @@ export default function App() {
               <p>{categorias[categoriaAtiva].descricao}</p>
             </div>
 
+            {busca.trim().length >= 2 && (
+              <h3 className="resultado-titulo">
+                Resultados da busca ({resultadosBusca.length})
+              </h3>
+            )}
+
             <div className="menu">
-              {categorias[categoriaAtiva].itens.map((item) => (
-                <div key={item.id} className="item">
-                  <strong>{item.nome}</strong>
-                  <p className="item-descricao">{item.descricao}</p>
-                  <div className="botoes-item">
-                    {item.precoG > 0 && (
-                      <button
-                        className="botao adicionar"
-                        onClick={() =>
-                          adicionarItem(getNomeItem(item, "G"), item.precoG)
-                        }
-                      >
-                        <strong>{getBotaoTexto(item, "precoG")}</strong>
-                      </button>
-                    )}
-                    {item.precoB > 0 && (
-                      <button
-                        className="botao adicionar"
-                        onClick={() =>
-                          adicionarItem(getNomeItem(item, "B"), item.precoB)
-                        }
-                      >
-                        <strong>{getBotaoTexto(item, "precoB")}</strong>
-                      </button>
-                    )}
-                    {item.preco > 0 && (
-                      <button
-                        className="botao adicionar"
-                        onClick={() => adicionarItem(item.nome, item.preco)}
-                      >
-                        <strong>Adicionar: R$ {item.preco.toFixed(2)}</strong>
-                      </button>
-                    )}
-                    {item.preco2G > 0 && (
-                      <button
-                        className="botao adicionar"
-                        onClick={() => iniciarMeiaMeia(item, "G")}
-                      >
-                        <strong>Adic. 2Sabores G</strong>
-                      </button>
-                    )}
-                    {item.preco2B > 0 && (
-                      <button
-                        className="botao adicionar"
-                        onClick={() => iniciarMeiaMeia(item, "B")}
-                      >
-                        <strong>Adic. 2Sabores B</strong>
-                      </button>
-                    )}
-                  </div>
-                </div>
-              ))}
+              {(busca.trim().length >= 2 ? resultadosBusca : categorias[categoriaAtiva].itens)
+                .map(renderItemCard)}
             </div>
 
             {modoMeia && (
